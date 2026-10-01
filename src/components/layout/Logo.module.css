@@ -1,0 +1,69 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.mark {
+  width: auto;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.wordmark {
+  width: auto;
+  height: 28px;
+}
+
+/* "— CLINIC —", as in the logo */
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin-top: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+.tagline::before,
+.tagline::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+/* letter-spacing adds space after the last letter; balance it */
+.tagline {
+  padding-left: 0.38em;
+}
+
+.dark .tagline {
+  color: #4b5a66;
+}
+
+.light .tagline {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 379px) {
+  .mark {
+    height: 46px;
+  }
+
+  .wordmark {
+    height: 24px;
+  }
+}

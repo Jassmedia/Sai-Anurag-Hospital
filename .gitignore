@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+npm-debug.log*
+.DS_Store
+
+# Local preview screenshots and editor/tool settings
+screenshots/
+.claude/

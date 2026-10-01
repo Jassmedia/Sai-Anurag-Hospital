@@ -1,0 +1,189 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 2rem + 4vw, 5rem);
+  align-items: center;
+}
+
+/* ---------- Visual ---------- */
+.visual {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--radius-lg);
+  background: var(--cyan-100); /* shown while the photo loads */
+  box-shadow: var(--shadow-md);
+}
+
+.tileWomen,
+.tileChildren {
+  aspect-ratio: 1 / 1.05;
+}
+
+.tileFamilies {
+  grid-column: 1 / -1;
+  aspect-ratio: 2 / 1;
+}
+
+.tileImage {
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.tile:hover .tileImage {
+  transform: scale(1.04);
+}
+
+/* Soft brand-tinted wash so the photos sit comfortably with the palette */
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(8, 52, 61, 0.28) 0%, transparent 38%);
+  pointer-events: none;
+}
+
+.tileTag {
+  position: absolute;
+  z-index: 2;
+  top: clamp(0.7rem, 0.5rem + 0.8vw, 1rem);
+  left: clamp(0.7rem, 0.5rem + 0.8vw, 1rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 16px -8px rgba(15, 34, 51, 0.4);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.tileTag svg {
+  color: var(--teal-600);
+}
+
+.quote {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  width: min(88%, 380px);
+  margin: 0;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.quote blockquote {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--navy-900);
+}
+
+.quoteIcon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--green-500);
+}
+
+/* ---------- Content ---------- */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--ink-700);
+}
+
+.points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem 1.5rem;
+  width: 100%;
+}
+
+.points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-weight: 500;
+  color: var(--navy-900);
+}
+
+.check {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  border-radius: 50%;
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+/* Small screens: text first, quote card sits below the tiles */
+@media (max-width: 959px) {
+  .content {
+    order: -1;
+  }
+}
+
+@media (max-width: 559px) {
+  .visual {
+    padding-bottom: 0;
+  }
+
+  .quote {
+    position: relative;
+    left: auto;
+    transform: none;
+    width: auto;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .points {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+}

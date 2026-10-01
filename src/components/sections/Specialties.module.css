@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+}
+
+@media (min-width: 680px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* odd last card spans the full row on tablet */
+  .grid > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid > li:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}

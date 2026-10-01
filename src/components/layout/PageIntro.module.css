@@ -1,0 +1,39 @@
+.intro {
+  padding-top: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+  padding-bottom: clamp(3rem, 2rem + 4vw, 5rem);
+  background:
+    radial-gradient(520px 360px at 95% 0%, rgba(108, 203, 217, 0.22), transparent 70%),
+    linear-gradient(180deg, #eef7fa 0%, #fff 100%);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
+  font-size: var(--text-sm);
+  color: var(--ink-500);
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  color: var(--ink-300);
+}
+
+.breadcrumbs a:hover {
+  color: var(--teal-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumbs [aria-current] {
+  font-weight: 600;
+  color: var(--navy-900);
+}

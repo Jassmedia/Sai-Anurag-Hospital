@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.teal {
+  --accent: var(--teal-700);
+  --accent-bg: var(--teal-100);
+}
+
+.cyan {
+  --accent: var(--teal-600);
+  --accent-bg: var(--cyan-100);
+}
+
+.green {
+  --accent: var(--green-700);
+  --accent-bg: var(--green-100);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 16 / 12;
+  margin: 0.6rem 0.6rem 0;
+  border-radius: calc(var(--radius-lg) - 6px);
+  overflow: hidden;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.card > .body:first-child {
+  padding-top: 1.6rem;
+}
+
+/* Specialty icon, shown instead of a photo */
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.65rem;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.specialty {
+  align-self: flex-start;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.name {
+  margin-top: 0.2rem;
+  font-size: var(--text-h3);
+}
+
+.summary {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.summary {
+  margin-bottom: 0.75rem;
+}
+
+/* Pin the button to the bottom so buttons line up across cards */
+.button {
+  margin-top: auto;
+}
+
+@media (min-width: 640px) {
+  .photo {
+    aspect-ratio: 4 / 4.2;
+  }
+}

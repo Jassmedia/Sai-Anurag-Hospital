@@ -1,0 +1,87 @@
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    box-shadow 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.md {
+  padding: 0.7rem 1.3rem 0.7rem 0.8rem;
+  font-size: var(--text-sm);
+}
+
+.lg {
+  padding: 0.85rem 1.6rem 0.85rem 1rem;
+  font-size: var(--text-base);
+}
+
+.full,
+.full .button {
+  width: 100%;
+}
+
+/* WhatsApp green with dark text (white on #25D366 is too low-contrast). */
+.solid {
+  background: #25d366;
+  color: #0b2e1f;
+  box-shadow: 0 10px 24px -12px rgba(37, 211, 102, 0.75);
+}
+
+.solid:hover {
+  background: #3ddc79;
+}
+
+.outline {
+  background: #fff;
+  color: var(--navy-900);
+  border-color: #a6e7bf;
+}
+
+.outline:hover {
+  border-color: #25d366;
+  background: #f1fcf5;
+  box-shadow: 0 8px 20px -12px rgba(37, 211, 102, 0.6);
+}
+
+.badge {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.outline .badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+}
+
+.note {
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 300px;
+}
